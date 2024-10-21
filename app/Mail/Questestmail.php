@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Mail;
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -12,14 +10,13 @@ use Illuminate\Queue\SerializesModels;
 class Questestmail extends Mailable
 {
     use Queueable, SerializesModels;
- public $data;
+    
+     public $data;
 
     public function __construct($data)
     {
         $this->data = $data;  
     }
-
-
     /**
      * Get the message envelope.
      */
@@ -29,7 +26,6 @@ class Questestmail extends Mailable
             subject: 'Questes123tmail',
         );
     }
-
     /**
      * Get the message content definition.
      */
@@ -39,7 +35,6 @@ class Questestmail extends Mailable
             view: 'email',
         );
     }
-
     /**
      * Get the attachments for the message.
      *
